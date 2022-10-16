@@ -1,0 +1,70 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+    <BaseOutputPath>bin\</BaseOutputPath>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <SignAssembly>True</SignAssembly>
+    <DelaySign>False</DelaySign>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <RootNamespace>Lex4K</RootNamespace>
+    <ErrorReport>none</ErrorReport>
+    <TargetFramework>net6.0</TargetFramework>
+    <AnalysisLevel>6.0-recommended</AnalysisLevel>
+    <AssemblyOriginatorKeyFile>C:\Projects\aplib development\Base4K\Base4K\_KEYS_\Base4K key pair.snk</AssemblyOriginatorKeyFile>
+    <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+    <Title>Base4K</Title>
+    <Version>$(VersionSuffix)</Version>
+    <Authors>vadim baklanov</Authors>
+    <Product>Lex4K</Product>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <RepositoryType>git</RepositoryType>
+    <Copyright>2022 vadim b. (vadim baklanov)</Copyright>
+    <Description>Lex4K/Base4K encoding provider</Description>
+    <PackageProjectUrl>https://Lex4K.org</PackageProjectUrl>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/aplib/Base4K.git</RepositoryUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;CS8603</NoWarn>
+    <Optimize>False</Optimize>
+    <WarningLevel>7</WarningLevel>
+    <DebugType>portable</DebugType>
+    <Deterministic>True</Deterministic>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;CS8603</NoWarn>
+    <WarningLevel>7</WarningLevel>
+    <DebugType>portable</DebugType>
+    <Deterministic>True</Deterministic>
+    <ShouldCreateLogs>True</ShouldCreateLogs>
+    <AdvancedSettingsExpanded>True</AdvancedSettingsExpanded>
+    <UpdateAssemblyVersion>True</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>False</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
+    <UpdatePackageVersion>False</UpdatePackageVersion>
+    <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
+    <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
+    <AssemblyVersionSettings>None.None.Increment.Increment</AssemblyVersionSettings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="readme.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

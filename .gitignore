@@ -1,0 +1,7 @@
+*.rar
+*.bat
+*.dll
+.vs/
+bin/
+obj/
+TestResults/

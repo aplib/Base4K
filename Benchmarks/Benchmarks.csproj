@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <StartupObject>Program</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Base4K" Version="1.0.0" />
+    <PackageReference Include="BenchmarkDotNet" Version="0.13.2" />
+  </ItemGroup>
+
+</Project>
