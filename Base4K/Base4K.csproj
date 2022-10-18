@@ -33,6 +33,8 @@
     <PackageProjectUrl>https://Lex4K.org</PackageProjectUrl>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/aplib/Base4K.git</RepositoryUrl>
+    <PackageTags>Base4K encoding</PackageTags>
+    <PackageReleaseNotes>UTF16 Base4K encoding for NET Core</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
