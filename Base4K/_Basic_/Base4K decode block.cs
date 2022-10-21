@@ -1,5 +1,5 @@
 ﻿namespace Lex4K;
-using System.Text;
+using System.Runtime.InteropServices;
 
 public partial class Base4K
 {
@@ -8,14 +8,13 @@ public partial class Base4K
     /// <param name="encoded">The Base4K block encoded string</param>
     /// <returns>Decoded binary data</returns>
     /// <exception cref="IndexOutOfRangeException">Invalid Base4K block encoded string format.</exception>
-    public static byte[] DecodeBlockToNewBuffer(int count, string encoded)
+    public static byte[] DecodeBlockToNewBuffer(int count, ReadOnlySpan<char> encoded)
     {
-        if (string.IsNullOrWhiteSpace(encoded))
+        if (encoded.Length == 0)
             return null;
-        
         byte[] buffer = new byte[count];
-        var bytes = Encoding.Unicode.GetBytes(encoded);
-        DecodeBlock(count, bytes, buffer);
+        var encoded_as_bytes = MemoryMarshal.Cast<char, byte>(encoded);
+        DecodeBlock(count, encoded_as_bytes, buffer.AsSpan());
         return buffer;
     }
 }
