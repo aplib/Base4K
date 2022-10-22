@@ -6,7 +6,7 @@ public partial class Base4K
     /// <summary>Encodes binary data into encoded text, represented as a Base4K chain text.</summary>
     /// <param name="bytes">The input span that contains binary data that needs to be encoded.</param>
     /// <returns>Base4K chain string</returns>
-    public static string EncodeChainString(ReadOnlySpan<byte> bytes)
+    public static string EncodeChainToString(ReadOnlySpan<byte> bytes)
     {
         var max_output_length = CalcChainMaxEncodeOutput(bytes.Length);
         Span<byte> output_buffer = (max_output_length < 16384) ? stackalloc byte[max_output_length] : new byte[max_output_length];

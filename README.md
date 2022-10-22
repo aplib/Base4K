@@ -1,4 +1,4 @@
-# UTF16 Base4K encoding for NET Core
+﻿# UTF16 Base4K encoding for NET Core
 
 The Base4K encoding scheme represents binary data as text using a set of 4096 characters (letters) of the virtual alphabet.
 In this encoding, the data-to-character ratio of 3 bytes roughly corresponds to two Unicode characters of text.
@@ -21,15 +21,15 @@ EncodeBlock() - 2 overloads
 EncodeBlockToString()
 EncodeBlockToStringBuilder()
 EncodeChain() - 2 overloads
-EncodeChainString()
+EncodeChainToString()
 EncodeChainToStringBuilder()
 DecodeBlock()
 DecodeBlockToNewBuffer()
-DecodeChain() - 2 overloads
+DecodeChain()
+DecodeChainToNewBuffer()
 ```
 
 To be continued...
 
 Apache 2.0 license
 2022 © vadim b. (vadim baklanov)
-

@@ -21,11 +21,12 @@ EncodeBlock() - 2 overloads
 EncodeBlockToString()
 EncodeBlockToStringBuilder()
 EncodeChain() - 2 overloads
-EncodeChainString()
+EncodeChainToString()
 EncodeChainToStringBuilder()
 DecodeBlock()
 DecodeBlockToNewBuffer()
-DecodeChain() - 2 overloads
+DecodeChain()
+DecodeChainToNewBuffer()
 ```
 
 To be continued...

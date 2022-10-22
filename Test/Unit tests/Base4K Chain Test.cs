@@ -13,7 +13,7 @@ namespace Test
         public void ChainEncodeDecode()
         {
             var rnd = new Random((int)DateTime.Now.Ticks);
-            for (int r = 0; r < 1000; r++)
+            for (int r = 0; r < 500; r++)
             {
                 var buffersize = rnd.Next(0, 100000);
                 var buffer = Setup.RandomBuffer(buffersize,/*seed*/ (int)DateTime.Now.Ticks);
@@ -21,10 +21,10 @@ namespace Test
                 var count = rnd.Next(0, buffersize - offset);
                 var test_span = new ReadOnlySpan<byte>(buffer, offset, count);
 
-                var encoded = Base4K.EncodeChainString(test_span);
+                var encoded = Base4K.EncodeChainToString(test_span);
                 Assert.IsTrue(encoded.All(chr => Base4K.IsBase4KChar(chr)));
 
-                var decoded = Base4K.DecodeChain(encoded);
+                var decoded = Base4K.DecodeChainToNewBuffer(encoded);
                 Assert.IsTrue(decoded.SequenceEqual(test_span));
             }
         }
@@ -33,13 +33,13 @@ namespace Test
         public async Task ChainStreamEncodeDecode()
         {
             var rnd = new Random((int)DateTime.Now.Ticks);
-            for (int r = 0; r < 1000; r++)
+            for (int r = 0; r < 500; r++)
             {
                 var buffersize = rnd.Next(0, 100000);
                 var buffer = Setup.RandomBuffer(buffersize,/*seed*/ (int)DateTime.Now.Ticks);
                 var offset = rnd.Next(0, buffersize);
                 var count = rnd.Next(0, buffersize - offset);
-
+                
                 var test_span = new Memory<byte>(buffer, offset, count);
                 var test_data = test_span.ToArray();
 
@@ -55,5 +55,5 @@ namespace Test
                 Assert.IsTrue(new Span<byte>(decoded.GetBuffer(), 0, (int)decoded.Position).SequenceEqual(test_data));
             }
         }
-    }
+    }     
 }

@@ -41,8 +41,8 @@ public partial class Base4K
     [MethodImpl(MethodImplOptions.AggressiveOptimization | MethodImplOptions.AggressiveInlining)]
     public static int CalcBlockEncodeOutput(int bytes) => bytes / 3 * 4 + bytes % 3 * 2;
     /// <summary>
-    /// Returns the maximum length (in bytes) of the resulting encoded Base4K chain text.
-    /// Not for calculations, only for buffer memory allocation(!) Real value variative by data length.
+    /// Calculate maximum length (in bytes) of the resulting encoded Base4K chain text.
+    /// Not for later calculations, only for buffer memory allocation(!) Real value variative by data length.
     /// </summary>
     /// <param name="bytes">binary data bytes count.</param>
     /// <returns>The length (in bytes) of the result Base4K chain text.</returns>
@@ -54,7 +54,10 @@ public partial class Base4K
         int left = bytes - max_blocks_count * MAX_DATABLOCK_IN_CHAIN;
         return max_blocks + 2 + CalcBlockEncodeOutput(left) + 2;
     }
-    /// <param name="bytes">Binary data bytes count of encoded Base4K chain.</param>
+    /// <summary>
+    /// Calculate the size of the decoding output buffer to decode N bytes of input data.
+    /// </summary>
+    /// <param name="bytes">Binary data (bytes) count of encoded Base4K chain.</param>
     /// <returns>The size of the buffer (bytes) that is required for decoding.</returns>
     [MethodImpl(MethodImplOptions.AggressiveOptimization)]
     public static int CalcChainDecodeBufferSize(int bytes)
