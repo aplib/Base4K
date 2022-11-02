@@ -64,7 +64,6 @@ public partial class Base4K
         var left = count; // bytes
         int buffer_length = count < 6 ? 6 : count > 252 ? 252 : count;
         byte[] buffer = new byte[buffer_length];
-        //int to_read; // read op size
         int buffer_decount;
         int buffer_pos;
         int encode_buffer_length = Math.Min(CalcBlockEncodeOutput(count), 336);

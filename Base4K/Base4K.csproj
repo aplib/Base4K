@@ -33,7 +33,7 @@
     <PackageProjectUrl>https://Lex4K.org</PackageProjectUrl>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/aplib/Base4K.git</RepositoryUrl>
-    <PackageTags>Base4K encoding</PackageTags>
+    <PackageTags>Base4K, text, encoding</PackageTags>
     <PackageReleaseNotes>UTF16 Base4K encoding for NET Core</PackageReleaseNotes>
     <PackageIcon></PackageIcon>
   </PropertyGroup>

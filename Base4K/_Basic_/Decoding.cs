@@ -26,10 +26,10 @@ public partial class Base4K
             left -= x6 * 6;
             while (x6-- > 0)
             {
-                uint index_0 = revert[*s_as_shorts++];
-                uint index_1 = revert[*s_as_shorts++];
-                uint index_2 = revert[*s_as_shorts++];
-                uint index_3 = revert[*s_as_shorts++];
+                ushort index_0 = revert[*s_as_shorts++];
+                ushort index_1 = revert[*s_as_shorts++];
+                ushort index_2 = revert[*s_as_shorts++];
+                ushort index_3 = revert[*s_as_shorts++];
                 *t_as_shorts++ = (ushort)(index_0 | index_1 << 12);
                 *t_as_shorts++ = (ushort)(index_1 >> 4 | index_2 << 8);
                 *t_as_shorts++ = (ushort)(index_2 >> 8 | index_3 << 4);
