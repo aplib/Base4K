@@ -40,7 +40,7 @@ public partial class Base4K
             byte* t_as_bytes = (byte*)t_as_shorts;
 
             // x3
-            if (left >= 3)
+            if (left > 2)
             {
                 left -= 3;
                 ushort index_0 = revert[*s_as_shorts];

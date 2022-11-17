@@ -18,20 +18,20 @@
     <AssemblyOriginatorKeyFile>C:\Projects\aplib development\Lex4K\Base4K\Base4K\_KEYS_\Base4K key pair.snk</AssemblyOriginatorKeyFile>
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
     <Title>Base4K</Title>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Authors>vadim baklanov</Authors>
     <Product>Lex4K</Product>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <IncludeSymbols>True</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <AssemblyVersion>1.0.1.0</AssemblyVersion>
-    <FileVersion>1.0.1.0</FileVersion>
+    <AssemblyVersion>1.0.2</AssemblyVersion>
+    <FileVersion>1.0.2</FileVersion>
     <RepositoryType>git</RepositoryType>
     <Copyright>2022 vadim b. (vadim baklanov)</Copyright>
     <Description>Lex4K/Base4K encoding provider</Description>
     <PackageProjectUrl>https://Lex4K.org</PackageProjectUrl>
-    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/aplib/Base4K.git</RepositoryUrl>
     <PackageTags>Base4K, text, encoding</PackageTags>
     <PackageReleaseNotes>UTF16 Base4K encoding for NET Core</PackageReleaseNotes>
@@ -68,6 +68,13 @@
       <PackagePath>\</PackagePath>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
