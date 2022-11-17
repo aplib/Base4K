@@ -26,13 +26,15 @@ public partial class Base4K
             left -= x6 * 6;
             while (x6-- > 0)
             {
-                ushort index_0 = revert[*s_as_shorts++];
-                ushort index_1 = revert[*s_as_shorts++];
-                ushort index_2 = revert[*s_as_shorts++];
-                ushort index_3 = revert[*s_as_shorts++];
-                *t_as_shorts++ = (ushort)(index_0 | index_1 << 12);
-                *t_as_shorts++ = (ushort)(index_1 >> 4 | index_2 << 8);
-                *t_as_shorts++ = (ushort)(index_2 >> 8 | index_3 << 4);
+                ushort index_0 = revert[*s_as_shorts];
+                ushort index_1 = revert[*(s_as_shorts + 1)];
+                ushort index_2 = revert[*(s_as_shorts + 2)];
+                ushort index_3 = revert[*(s_as_shorts + 3)];
+                s_as_shorts += 4;
+                *t_as_shorts = (ushort)(index_0 | index_1 << 12);
+                *(t_as_shorts + 1) = (ushort)(index_1 >> 4 | index_2 << 8);
+                *(t_as_shorts + 2) = (ushort)(index_2 >> 8 | index_3 << 4);
+                t_as_shorts += 3;
             }
 
             byte* t_as_bytes = (byte*)t_as_shorts;
@@ -41,15 +43,25 @@ public partial class Base4K
             if (left >= 3)
             {
                 left -= 3;
-                ushort index_0 = revert[*s_as_shorts++];
-                *t_as_bytes++ = (byte)index_0;
-                ushort index_1 = revert[*s_as_shorts++];
-                *t_as_bytes++ = (byte)(index_0 >> 8 | (index_1 & 0x000f) << 4);
-                *t_as_bytes++ = (byte)(index_1 >> 4);
+                ushort index_0 = revert[*s_as_shorts];
+                ushort index_1 = revert[*(s_as_shorts + 1)];
+                s_as_shorts += 2;
+                *t_as_bytes = (byte)index_0;
+                *(t_as_bytes + 1) = (byte)(index_0 >> 8 | (index_1 & 0x000f) << 4);
+                *(t_as_bytes + 2) = (byte)(index_1 >> 4);
+                t_as_bytes += 3;
             }
 
-            while (left-- > 0)
-                *t_as_bytes++ = (byte)revert[*s_as_shorts++];
+            switch (left)
+            {
+                case 1:
+                    *t_as_bytes = (byte)revert[*s_as_shorts];
+                    break;
+                case 2:
+                    *t_as_bytes = (byte)revert[*s_as_shorts];
+                    *(t_as_bytes + 1) = (byte)revert[*(s_as_shorts + 1)];
+                    break;
+            }
         }
     }
 

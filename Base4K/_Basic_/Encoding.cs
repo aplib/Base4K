@@ -1,4 +1,6 @@
 ﻿namespace Lex4K;
+
+using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -25,13 +27,16 @@ public partial class Base4K
             left -= x6 * 6;
             while (x6-- > 0)
             {
-                uint short_0 = *s_as_shorts++;
-                uint short_1 = *s_as_shorts++;
-                uint short_2 = *s_as_shorts++;
-                *t_as_shorts++ = bin[short_0 & 0x0fff];
-                *t_as_shorts++ = bin[(short_0 >> 12) | ((short_1 & 0x00ff) << 4)];
-                *t_as_shorts++ = bin[((short_1 & 0xff00) >> 8) | ((short_2 & 0x000f) << 8)];
-                *t_as_shorts++ = bin[short_2 >> 4];
+                uint short_0 = *s_as_shorts;
+                uint short_1 = *(s_as_shorts + 1);
+                uint short_2 = *(s_as_shorts + 2);
+                s_as_shorts += 3;
+
+                *t_as_shorts = bin[short_0 & 0x0fff];
+                *(t_as_shorts + 1) = bin[(short_0 >> 12) | ((short_1 & 0x00ff) << 4)];
+                *(t_as_shorts + 2) = bin[((short_1 & 0xff00) >> 8) | ((short_2 & 0x000f) << 8)];
+                *(t_as_shorts + 3) = bin[short_2 >> 4];
+                t_as_shorts += 4;
             }
 
             var s_as_bytes = (byte*)s_as_shorts;
@@ -40,16 +45,26 @@ public partial class Base4K
             if (left >= 3)
             {
                 left -= 3;
-                uint byte_0 = *s_as_bytes++;
-                uint byte_1 = *s_as_bytes++;
-                uint byte_2 = *s_as_bytes++;
-                *t_as_shorts++ = bin[byte_0 | ((byte_1 & 0x000f) << 8)];
-                *t_as_shorts++ = bin[(byte_1 >> 4) | (byte_2 << 4)];
+                uint byte_0 = *s_as_bytes;
+                uint byte_1 = *(s_as_bytes + 1);
+                uint byte_2 = *(s_as_bytes + 2);
+                s_as_bytes += 3;
+                *t_as_shorts = bin[byte_0 | ((byte_1 & 0x000f) << 8)];
+                *(t_as_shorts + 1) = bin[(byte_1 >> 4) | (byte_2 << 4)];
+                t_as_shorts += 2;
             }
 
             // x1 --> x2
-            while (left-- > 0)
-                *t_as_shorts++ = bin[*s_as_bytes++];
+            switch (left)
+            {
+                case 1:
+                    *t_as_shorts = bin[*s_as_bytes];
+                    break;
+                case 2:
+                    *t_as_shorts = bin[*s_as_bytes];
+                    *(t_as_shorts + 1) = bin[*(s_as_bytes + 1)];
+                    break;
+            }
         }
         return bytes.Length / 3 * 4 + bytes.Length % 3 * 2; ;
     }

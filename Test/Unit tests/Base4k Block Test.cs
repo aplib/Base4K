@@ -8,12 +8,11 @@ namespace Test
     [TestClass]
     public partial class Base4k_UnitTest
     {
-        
         [TestMethod]
         public void BlockEncodeDecodeTest()
         {
             var rnd = new Random((int)DateTime.Now.Ticks);
-            for (int r = 0; r < 500; r++)
+            for (int r = 0; r < 250; r++)
             {
                 var buffersize = rnd.Next(0, 100000);
                 var buffer = Setup.RandomBuffer(buffersize,/*seed*/ (int)DateTime.Now.Ticks);

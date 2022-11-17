@@ -13,7 +13,7 @@ namespace Test
         public void ChainEncodeDecode()
         {
             var rnd = new Random((int)DateTime.Now.Ticks);
-            for (int r = 0; r < 500; r++)
+            for (int r = 0; r < 250; r++)
             {
                 var buffersize = rnd.Next(0, 100000);
                 var buffer = Setup.RandomBuffer(buffersize,/*seed*/ (int)DateTime.Now.Ticks);
@@ -33,7 +33,7 @@ namespace Test
         public async Task ChainStreamEncodeDecode()
         {
             var rnd = new Random((int)DateTime.Now.Ticks);
-            for (int r = 0; r < 500; r++)
+            for (int r = 0; r < 250; r++)
             {
                 var buffersize = rnd.Next(0, 100000);
                 var buffer = Setup.RandomBuffer(buffersize,/*seed*/ (int)DateTime.Now.Ticks);
