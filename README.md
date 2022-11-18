@@ -1,5 +1,5 @@
-﻿# UTF16 Base4K encoding for NET Core
-[![Nuget](https://img.shields.io/nuget/v/Base4K?label=Base4K)](https://www.nuget.org/packages/Base4K)
+﻿# UTF16 Base4K(alphabetic) encoding for NET Core
+[![Nuget](https://img.shields.io/nuget/v/Base4K?label=nuget)](https://www.nuget.org/packages/Base4K)
 
 The Base4K encoding scheme represents binary data as text using a set of 4096 characters (letters) of the virtual alphabet.
 In this encoding, the data-to-character ratio of 3 bytes roughly corresponds to two Unicode characters of text.

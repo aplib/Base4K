@@ -34,8 +34,7 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/aplib/Base4K.git</RepositoryUrl>
     <PackageTags>Base4K, text, encoding</PackageTags>
-    <PackageReleaseNotes>UTF16 Base4K encoding for NET Core</PackageReleaseNotes>
-    <PackageIcon></PackageIcon>
+    <PackageReleaseNotes>UTF16 Base4K(alphabetic) encoding for NET Core</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
