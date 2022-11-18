@@ -18,23 +18,24 @@
     <AssemblyOriginatorKeyFile>C:\Projects\aplib development\Lex4K\Base4K\Base4K\_KEYS_\Base4K key pair.snk</AssemblyOriginatorKeyFile>
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
     <Title>Base4K</Title>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <Authors>vadim baklanov</Authors>
     <Product>Lex4K</Product>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <IncludeSymbols>True</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <AssemblyVersion>1.0.2</AssemblyVersion>
-    <FileVersion>1.0.2</FileVersion>
+    <AssemblyVersion>1.0.3</AssemblyVersion>
+    <FileVersion>1.0.3</FileVersion>
     <RepositoryType>git</RepositoryType>
     <Copyright>2022 vadim b. (vadim baklanov)</Copyright>
-    <Description>Lex4K/Base4K encoding provider</Description>
+    <Description>Lex4K/Base4K alphabetical encoding provider</Description>
     <PackageProjectUrl>https://Lex4K.org</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/aplib/Base4K.git</RepositoryUrl>
     <PackageTags>Base4K, text, encoding</PackageTags>
-    <PackageReleaseNotes>UTF16 Base4K(alphabetic) encoding for NET Core</PackageReleaseNotes>
+    <PackageReleaseNotes>UTF16 Base4K(alphabetical) encoding for NET Core</PackageReleaseNotes>
+    <PackageIcon>4k.png</PackageIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -70,6 +71,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="4k.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Update="README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
