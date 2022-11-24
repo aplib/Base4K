@@ -18,7 +18,7 @@
     <AssemblyOriginatorKeyFile>C:\Projects\aplib development\Lex4K\Base4K\Base4K\_KEYS_\Base4K key pair.snk</AssemblyOriginatorKeyFile>
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
     <Title>Base4K</Title>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <Authors>vadim baklanov</Authors>
     <Product>Lex4K</Product>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
