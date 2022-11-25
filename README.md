@@ -28,9 +28,10 @@ Base4K схема кодирования представляет двоичны
 ```
 [  byte 2 ][ byte 1  ][ byte 0 ]
 [     8   ][ 4 ][  4 ][   8    ]
-[virtual char 1][virtual char 0]
+[virtual code 1][virtual code 0]
+[  16 <#< 12   ][  16 <#< 12   ]
+[unicode char 1][unicode char 0]
 ```
-
 ##### Library
 
 ```c#
