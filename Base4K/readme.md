@@ -1,7 +1,7 @@
-﻿## UTF16 Base4K(alphabetical) encoding for NET Core
+﻿# UTF16 Base4K(alphabetical) encoding for NET Core
 [![Nuget](https://img.shields.io/nuget/v/Base4K?label=nuget)](https://www.nuget.org/packages/Base4K)
 
-##### Summary
+### Summary
 
 The Base4K encoding scheme represents binary data as text using a set of 4096 characters (letters) of the virtual alphabet.
 In this encoding, the data-to-character ratio of 3 bytes roughly corresponds to two Unicode characters of text.
@@ -13,7 +13,7 @@ Base4K схема кодирования представляет двоичны
 В библиотеке реализовано два формата хранения данных в памяти - в виде блока и в виде цепочки, пока еще только скалярный алгоритм.
 Кодировка предназначена для компактного представления двоичных данных, хэшей и ключей на веб-странице или в текстовом редакторе.
 
-##### Encoding examples
+### Encoding examples
 
 | Primitive  | Bits | Encoded length | Example |
 | ------------- | ------------- | ------------- | ------------- |
@@ -23,16 +23,17 @@ Base4K схема кодирования представляет двоичны
 
 [Online Demo](https://Lex4K.org/Base4K-encoding)
 
-##### Scheme
+### Scheme
 
 ```
-[  byte 2 ][ byte 1  ][ byte 0 ]
+[  byte 2 ][  byte 1 ][ byte 0 ]
 [     8   ][ 4 ][  4 ][   8    ]
 [virtual code 1][virtual code 0]
 [  16 <#< 12   ][  16 <#< 12   ]
 [unicode char 1][unicode char 0]
 ```
-##### Library
+
+### Library
 
 ```c#
 Namespace: Lex4K

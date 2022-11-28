@@ -26,7 +26,7 @@ Base4K схема кодирования представляет двоичны
 ##### Scheme
 
 ```
-[  byte 2 ][ byte 1  ][ byte 0 ]
+[  byte 2 ][  byte 1 ][ byte 0 ]
 [     8   ][ 4 ][  4 ][   8    ]
 [virtual code 1][virtual code 0]
 [  16 <#< 12   ][  16 <#< 12   ]
