@@ -13,8 +13,7 @@ public partial class Base4K
         int encoded = EncodeChain(bytes, output_buffer);
         return Encoding.Unicode.GetString(output_buffer[..encoded]);
     }
-
-    /// <summary>Encodes binary data into encoded text, represented as a Base4K chain text and append the encoded to string builder.</summary>
+    /// <summary>Encodes binary data into encoded text, represented as a Base4K chain text and append the encoded to the string builder.</summary>
     /// <param name="bytes">The input span that contains binary data that needs to be encoded.</param>
     /// <param name="string_builder">The string builder for output the result.</param>
     /// <returns>Length of the added encoded fragment in characters</returns>

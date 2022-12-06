@@ -1,12 +1,11 @@
 ﻿namespace Lex4K;
 using System.Runtime.CompilerServices;
-
 /// <summary>
 /// Base4K encoding provider
 /// </summary>
 public partial class Base4K
 {
-    // Constants
+    // Constants & calculations
 
     /// <summary>
     /// The maximum length of the data block in the chain, without size of block header.
